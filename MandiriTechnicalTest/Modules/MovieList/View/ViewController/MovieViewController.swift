@@ -24,8 +24,6 @@ class MovieViewController: UIViewController {
         
         listMovieTableView.register(UINib(nibName: "MovieListTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieListTableViewCell")
         
-        print("ini genre: \(genre)")
-        
         ListMoviesInteractor.fetchAPIMovieList(page: currentPage, genre: genre) { data in
             DispatchQueue.main.async {
                 self.moviesArray = data
